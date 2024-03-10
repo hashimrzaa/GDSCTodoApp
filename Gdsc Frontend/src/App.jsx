@@ -49,8 +49,8 @@ const App = () => {
     });
   }
 
-  async function editData(id) {
-    const editText = prompt("edit this todo");
+  async function editData(id, text) {
+    const editText = prompt("edit this todo", text);
     await axios
       .put(`http://localhost:3000/todos/${id}`, {
         text: editText,
@@ -98,7 +98,7 @@ const App = () => {
                   </button>
                   <button
                     className="text-white bg-[#1976d2] p-[5px] px-[15px] rounded"
-                    onClick={() => editData(item?.id)}
+                    onClick={() => editData(item?.id, item?.text)}
                   >
                     Edit
                   </button>
