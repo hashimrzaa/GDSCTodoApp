@@ -61,32 +61,34 @@ const App = () => {
   }
   return (
     <>
-      <div className="flex flex-col items-center justify-center gap-[30px] p-[20px] pt-[0] w-[90%] m-[auto]">
-        <div className="text-[5rem] sticky top-0 bg-white w-[100%] text-center ">
-          Todos
-        </div>
-        <form
-          className="flex  gap-[10px] flex-wrap w-[100%]"
-          onSubmit={addData}
-        >
-          <input
-            ref={text}
-            type="text"
-            className="border-[2px] items-center border-[#1976d2] w-[100%] p-[10px] rounded"
-          />
-          <button
-            type="submit"
-            className=" text-white bg-[#1976d2] p-[10px] w-[100%] rounded  "
+      <div className="flex flex-col items-center justify-center gap-[20px] p-[20px] pt-[0] w-[90%] m-[auto]">
+        <div className="bg-white w-[100%] sticky top-0">
+          <div className="text-[5rem]  bg-white w-[100%] text-center ">
+            Todos
+          </div>
+          <form
+            className="flex  gap-[10px] flex-wrap w-[100%] bg-white pb-3"
+            onSubmit={addData}
           >
-            Add
-          </button>
-        </form>
+            <input
+              ref={text}
+              type="text"
+              className="border-[2px] items-center border-[#1976d2] w-[100%] p-[10px] rounded"
+            />
+            <button
+              type="submit"
+              className=" text-white bg-[#1976d2] p-[10px] w-[100%] rounded  "
+            >
+              Add
+            </button>
+          </form>
+        </div>
         <ul className="flex items-center flex-col gap-[25px] w-[100%] ">
           {data.map((item, index) => {
             return (
               <li
                 key={index}
-                className="border-[2px] border-[#1976d2] w-[100%] p-[10px] rounded flex justify-between items-center flex-wrap overflow-auto "
+                className="gap-[20px] border-[2px] border-[#1976d2] w-[100%] p-[10px] rounded flex justify-between items-center flex-wrap overflow-auto "
               >
                 <span>{item?.text}</span>{" "}
                 <span className="flex justify-center items-center gap-5 flex-wrap">
