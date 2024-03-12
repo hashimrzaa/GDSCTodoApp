@@ -8,7 +8,7 @@ const App = () => {
   const [fetch, setfetch] = useState(false);
   useEffect(() => {
     async function getData() {
-      await axios("http://localhost:3000/todoS").then((data) => {
+      await axios("https://gdsc-todo-app.vercel.app/todoS").then((data) => {
         setdata(data?.data);
       });
     }
@@ -27,7 +27,7 @@ const App = () => {
     }
     try {
       await axios
-        .post("http://localhost:3000/todos", {
+        .post("https://gdsc-todo-app.vercel.app/todos", {
           text: text.current.value,
         })
         .then((data) => {
@@ -44,7 +44,7 @@ const App = () => {
   }
 
   async function deleteData(id) {
-    await axios.delete(`http://localhost:3000/todos/${id}`).then(() => {
+    await axios.delete(`https://gdsc-todo-app.vercel.app/todos/${id}`).then(() => {
       setfetch(true);
     });
   }
@@ -52,7 +52,7 @@ const App = () => {
   async function editData(id, text) {
     const editText = prompt("edit this todo", text);
     await axios
-      .put(`http://localhost:3000/todos/${id}`, {
+      .put(`https://gdsc-todo-app.vercel.app/todos/${id}`, {
         text: editText,
       })
       .then((res) => {
