@@ -1,0 +1,7 @@
+{
+  "hosting": {
+    "site": "gdsctodoapp",
+    "public": "dist",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+  }
+}
